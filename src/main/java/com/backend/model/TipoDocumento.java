@@ -2,6 +2,7 @@ package com.backend.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,8 +22,11 @@ public class TipoDocumento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(length = 20, nullable = false)
 	private String codigo;
+	@Column(length = 100, nullable = false)
 	private String nombre;
+	@Column(length = 200)
 	private String descripcion;
 	private Integer estado;
 

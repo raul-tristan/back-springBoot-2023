@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,11 +25,16 @@ public class Entidad implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
+	@Column(length = 25, nullable = false)
 	private String nroDocumento;
+	@Column(length = 100, nullable = false)
 	private String razonSocial;
+	@Column(length = 100)
 	private String nombreComercial;
+	@Column(length = 250)
 	private String direccion;
+	@Column(length = 50)
 	private String telefono;
 	private Integer estado;
 
